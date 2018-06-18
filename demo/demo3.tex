@@ -1,0 +1,224 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Latex Beamer Slide Presentation %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (1) Beamer installation
+% Download the following 3 packages from 
+%       http://sourceforge.net/project/showfiles.php?group_id=92412
+% and save them in texmf tree of your home directory like this
+% (a) latex-beamer goes in      ~/texmf/tex/latex/beamer 
+% (b) pgf goes in               ~/texmf/tex/latex/pgf 
+% (c) xcolor goes in            ~/texmf/tex/latex/xcolor
+
+% (2) Beamer usage
+% Manual for Beamer and Prosper: http://latex.perseguers.ch/contrib/presentations/guidelines.pdf
+% Examples: http://latex-beamer.sourceforge.net/ 
+% Example: http://www-verimag.imag.fr/~lmorel/html/beamer.html
+% Manual: /home/tgirke/texmf/tex/latex/beamer/latex-beamer-3.06/doc/beameruserguide.pdf
+% Print handouts: cp myslides.pdf zzz.pdf; pdftops -expand zzz.pdf; psnup -4 -b6mm -f zzz.ps > zzzhandouts.ps; ps2pdf zzzhandouts.ps
+% generate PDF slide show with command:
+% pdflatex demo3.tex; bibtex demo3.tex; pdflatex demo3.tex
+
+\documentclass{beamer}
+% Load a theme (graphics, colors,...) for the presentation
+%\usepackage{beamerthemelined}
+%\usepackage{beamerthemetree}
+%\usetheme{default}
+\usetheme{umbc2}
+%\usetheme{EastLansing}
+%\usepackage{beamerthemeclassic}
+	
+% For images:
+\usepackage{graphicx}
+% For color in text
+\usepackage{color}
+
+% For wrapping long URLs properly (may not be necessary)
+\usepackage{url}
+
+% Define comment command, which allows to comment out text with this syntax: \comment{my comment}
+\newcommand{\comment}[1]{}
+
+% Use UMBC theme collection. Download theme from: http://www.math.umbc.edu/~rouben/beamer/beamer-umbc.tar.gz
+\useoutertheme{umbcfootline} 
+% Define footnote line, see details: http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-9.html#node_sec_9
+\setfootline{\inserttitle \hfill \textit{\insertsection} \hfill \textit{\insertsubsection} \hfill Slide \insertframenumber/\inserttotalframenumber}
+
+% BibTex Settings
+\usepackage{natbib}
+\renewcommand\refname{Bibliography} % Defines title of bibliography   
+
+\hypersetup{pdfpagemode=FullScreen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Beamer Template}
+\subtitle{A Quick Reference}
+\author{Thomas Girke}
+\date{\today}
+
+% Manage internal and external links with hyperref (http://en.wikibooks.org/wiki/LaTeX/Hyperlinks)
+\usepackage{hyperref}
+\hypersetup{
+	bookmarks=true,         % show bookmarks bar?  
+	unicode=false,          % non-Latin characters in Acrobat'ss bookmarks 
+	pdftoolbar=true,        % show Acrobat's toolbar?  
+	pdfmenubar=true,        % show Acrobats menu?  
+	pdffitwindow=false,     % window fit to page when opened
+	pdfstartview={FitH},    % fits the width of the page to the window
+	pdftitle={My title},    % title 
+	pdfauthor={Author},     % author
+	pdfsubject={Subject},   % subject of the document 
+	pdfcreator={Creator},   % creator of the document 
+	pdfproducer={Producer}, % producer of the document
+	pdfkeywords={keywords}, % list of keywords 
+	pdfnewwindow=true,      % links in new window 
+	colorlinks=true,        % false: boxed links; true: colored links 
+	linkcolor=blue,         % color of internal links 
+	citecolor=blue,         % color of links to bibliography 
+	filecolor=blue,         % color of file links 
+	urlcolor=blue           % color of external links 
+}
+
+\begin{document}
+\frame{\titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Creates Separate Outline Slide at Beginning
+%\section{Outline}
+\frame{\tableofcontents}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define to generate outline slide automatically at start of every new section
+\AtBeginSection[]
+{
+   \begin{frame}
+       \frametitle{Outline}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
+% Same effect at subsection level
+%\AtBeginSubsection[]
+%{
+%   \begin{frame}
+%       \frametitle{Outline}
+%       \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 1}
+\begin{itemize}
+	\item Introduction Section 1
+	\item ...
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{subsection 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[allowframebreaks]{Section 1: subsection 1}
+\begin{itemize}
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+	\item Long list with frame breaks 
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{subsection 2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 1: subsection 2}
+\begin{itemize}
+	\item ...
+	\item ...
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section 2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 2}
+\begin{itemize}
+	\item Introduction Section 2
+	\item ...
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{subsection 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 2: subsection 1}
+\begin{itemize}
+	\item ...
+	\item ...
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{subsection 2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 2: subsection 2}
+\begin{itemize}
+	\item ...
+	\item ...
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section 3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 3}
+\begin{itemize}
+	\item Introduction Section 3
+	\item ...
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{subsection 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 3: subsection 1}
+\begin{itemize}
+	\item ...
+	\item ...
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{subsection 2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Section 3: Citations with BibTex Support}
+\begin{itemize}
+	\item Citation in parentheses \citep{Knuth92, ConcreteMath, Simpson}
+	\item Citation of \cite{Knuth92, ConcreteMath, Simpson}
+	\item Extended citation \citep[][J Chem Inf Model, 46, 1912-1918]{ConcreteMath}
+	\item Footnote citation with more detail \citep{Knuth92}\footnote{\citep[][J Chem Inf Model]{Simpson}}
+	\item ...
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% REFERENCE LIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\newblock{\hskip .11em plus .33em minus .07em} % Important line to support typical BibTex behavior in Beamer slide presentation
+\begin{frame}[allowframebreaks]{Bibliography}
+\scriptsize 
+\bibliographystyle{elsart-harv.bst} % Uses style file "elsart-harv.bst" AND requires in preamble \usepackage{natbib}; many more styles can be found at http://jo.irisson.free.fr/bstdatabase/
+\bibliography{demo.bib} % Expects bibliography file "MyBibTex.bib"
+\nocite{Knuth92, ConcreteMath, Simpson} % includes selected references without citing them
+% \nocite{*} % includes all references from a bibtex database
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% REFERENCE LIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
